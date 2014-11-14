@@ -1,0 +1,36 @@
+<div class="wishlist-outer">
+  <h2>My Wishlist:</h2>
+  <% @likes.each do |liked_product| %>
+    <% if liked_product.liked == true %>
+      <div class="product-box col-xs-3" id=<%= "#{liked_product.product_id}" %>>
+        <a href="<%= current_product(liked_product.product_id).image %>" data-lightbox="image-<%= liked_product.product_id %>"><img class="wl-image" src=<%= "#{current_product(liked_product.product_id).image}" %>></a>
+          <% if current_product(liked_product.product_id).image_2 %>
+            <a href="<%= current_product(liked_product.product_id).image_2 %>" data-lightbox="image-<%= liked_product.product_id %>"></a>
+          <% end %>
+          <% if current_product(liked_product.product_id).image_3 %>
+            </a><a href="<%= current_product(liked_product.product_id).image_3 %>" data-lightbox="image-<%= liked_product.product_id %>"></a>
+          <% end %>
+          <% if current_product(liked_product.product_id).image_4 %>
+            </a><a href="<%= current_product(liked_product.product_id).image_4 %>" data-lightbox="image-<%= liked_product.product_id %>"></a>
+          <% end %>
+      <div class="wl-product-info-name">
+        <p class="wl-product-name"><%= "#{current_product(liked_product.product_id).name}" %></p>
+      </div>
+      <table class="wishlist-table">
+        <tr>
+          <td>
+            <div class="wl-product-info-designer">
+              <p class="wl-product-designer"><%= "#{current_product(liked_product.product_id).designer}" %></p>
+            </div>
+          </td>
+          <td>
+            <div class="wl-product-info-heart">
+              <a href=<%= "/products/#{liked_product.product_id}/users/#{liked_product.user_id}" %> class="wl-heart"><img src="/imgs/heart-filled.png" class="full" id=<%= "#{liked_product.product_id}" %>></a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <% end %>
+  <% end %>
+</div>

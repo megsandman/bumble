@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="/css/normalize.css">
+
+  <link rel="stylesheet" href="/css/application.css">
+
+  <link href="/css/lightbox.css" rel="stylesheet" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <script src="/js/application.js"></script>
+
+  <script src="/js/lightbox.min.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <title>Bumble.</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="navbar">
+      <h3 class="masthead-brand">Bumble.</h3>
+        <ul class="masthead-nav">
+          <% if session[:user_id] %>
+            <% if current_user.admin == true %>
+              <li>
+                <a href="/admin/users">Users</a>
+              </li>
+            <% end %>
+            <li>
+              <a href="/product/import">Import</a>
+            </li>
+            <li>
+              <a href="/products">Products</a>
+            </li>
+            <li>
+              <a href=<%= "/wishlist/#{session[:user_id]}" %>>Wishlist</a>
+            </li>
+            <li>
+              <a href=<%= "/logout" %>>Logout</a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+    <!-- <div class="cover welcome"> -->
+    <div class="cover">
+      <%= yield %>
+    </div>
+
+  </div>
+</body>
+</html>

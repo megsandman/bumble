@@ -1,0 +1,36 @@
+<div>
+  <h2 class="sub-header">Import Products:</h2>
+  <form method="post" action="/product/import">
+    <input class="form-control keyword-search" type="text" name="search_keywords" placeholder="Search keywords">
+    <input class="btn btn-lg btn-default" type="submit" value="Import!">
+  </form>
+
+  <h2 class="sub-header">Imported Products To Be Approved:</h2>
+  <div class="table-responsive" id="import-table">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Designer</th>
+          <th class="price-column">Price</th>
+          <th>Image</th>
+          <th>Approved</th>
+          <th>Delete</th>
+          <tr>
+          </thead>
+          <tbody>
+            <% @products_to_be_approved.each do |product|%>
+            <tr id="<%= product.id %>">
+              <td><form method="post" action="/product/import/<%=product.id%>"><input class="form-control import-form" type="text" name="edit_name" value="<%= product.name %>" onKeyPress="return submitenter(this,event)"></form></td>
+              <td><form method="post" action="/product/import/<%=product.id%>"><input class="form-control import-form" name="edit_designer" type="text" value="<%= product.designer %>" onKeyPress="return submitenter(this,event)"></form></td>
+              <td class="price-column"><form method="post" action="/product/import/<%=product.id%>"><input class="form-control import-form" name="edit_price" type="text" value="<%= product.price %>" onKeyPress="return submitenter(this,event)"></form></td>
+              <td><img class="amazon-product-image" src="<%= product.image %>" ></td>
+              <td><form method="post" action="/product/import/<%= product.id %>/approve"><input type="submit" class="btn btn-default import-approve" id="<%= product.id %>" value="Approve"></form></td>
+              <td><form method="post" action="/product/import/<%= product.id %>/delete"><input type="submit" class="btn btn-default import-delete" id="<%= product.id %>" value="Delete"></form></td>
+            </tr>
+            <% end %>
+          </tbody>
+          <table>
+          </div>
+        </div>
+

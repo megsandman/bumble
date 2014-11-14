@@ -1,0 +1,29 @@
+<div class="product-outer">
+  <div class="product-card">
+    <a href="<%= @product.image %>" data-lightbox="image-<%= @product.id %>"><img id="product-image" src="<%= @product.image %>" ></a>
+    <% if @product.image_2 %>
+      <a href="<%= @product.image_2 %>" data-lightbox="image-<%= @product.id %>"></a>
+    <% end %>
+    <% if @product.image_3 %>
+      </a><a href="<%= @product.image_3 %>" data-lightbox="image-<%= @product.id %>"></a>
+    <% end %>
+    <% if @product.image_4 %>
+      </a><a href="<%= @product.image_4 %>" data-lightbox="image-<%= @product.id %>"></a>
+    <% end %>
+    <div id="product-info">
+      <div id="name-designer">
+        <div id="product-text"><%= @product.name %></div>
+        <div id="product-designer"><%= @product.designer %></div>
+      </div>
+      <% if @product.price %>
+        <div id="product-price">$<%= @product.price %></div>
+      <% end %>
+    </div>
+  </div>
+  <div class=>
+    <form class="wl-like-buttons" id="<%= @product.id %>" method="post" action=<%= "/products/#{@product.id}" %>>
+      <input class="btn btn-lg btn-default" type="submit" name="pass" value="Pass">
+      <input class="btn btn-lg btn-default" type="submit" name="like" value="Like">
+    </form>
+  </div>
+</div>

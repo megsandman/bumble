@@ -1,0 +1,20 @@
+<div class="row" id="login-buffer">
+  <h1>Welcome to Bumble.</h2>
+  <h3>Shopping as entertainment.</h3>
+  <form method="post" action="/login" >
+    <ul class="login">
+      <li><input class="form-control .session-form" type="email" name="email" placeholder="Email"></li>
+
+      <li><input class="form-control" type="password" name="password" placeholder="Password"></li>
+
+      <% if @user && !flash[:err].empty? %>
+        <p class="errors">ERROR! <%= flash[:err] %>.</p>
+      <% end %>
+
+      <li><input class="btn btn-lg btn-default" type="submit" value="Login"></li>
+    </ul>
+  </form>
+  <p class="login-signup-switch" >New to Bumble? <a href="/signup">Sign up</a></p>
+  <!-- <p class="login-signup-switch" ><a href="/redirect_auth_url_login">Login with Google</a></p> -->
+
+</div>

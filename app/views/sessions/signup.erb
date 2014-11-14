@@ -1,0 +1,32 @@
+<div id="login-buffer">
+  <h1>Welcome to Bumble.</h1>
+  <h3>Shopping as entertainment.</h3>
+  <form method="post" action="/signup">
+    <ul class="login">
+      <li><input class="form-control .session-form" type="text" name="user[name]" placeholder="Name"></li>
+
+      <% if @user && !@user.errors[:name].empty? %>
+        <p class="errors">ERROR! Name <%= @user.errors[:name].first %>.</p>
+      <% end %>
+
+      <li><input class="form-control" type="email" name="user[email]" placeholder="Email"></li>
+
+      <% if @user && !@user.errors[:email].empty? %>
+        <p class="errors">ERROR! Email <%= @user.errors[:email].first %>.</p>
+      <% end %>
+
+      <li><input class="form-control" type="password" name="user[password]" placeholder="Password"></li>
+
+      <% if @user && !@user.errors[:password].empty? %>
+        <p class="errors">ERROR! Password <%= @user.errors[:password].first %>.</p>
+      <% end %>
+      <% if flash[:err] %>
+        <p class="errors">ERROR! <%= flash[:err] %>.</p>
+      <% end %>
+
+      <li><input class="btn btn-lg btn-default" type="submit" value="Sign up!"></li>
+  </ul>
+  </form>
+  <p class="login-signup-switch" >Already have an account? <a href="/login">Log in</a></p>
+  <!-- <p class="login-signup-switch" ><a href="/redirect_auth_url">Sign up with Google</a></p> -->
+</div>
