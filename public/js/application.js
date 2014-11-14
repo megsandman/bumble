@@ -62,7 +62,7 @@ $(document).ready(function() {
     })
   })
 
-  // // swipe on like
+  // swipe on like
   // $('.wl-like-buttons').on('click', function(e){
   //   e.preventDefault();
   //   var productId = $(this).attr('id')
@@ -72,27 +72,16 @@ $(document).ready(function() {
   //     url: "/products/" + productId,
   //     type: "post"
   //   }).done(function(server_data){
-  //     $('img').animate({ "left": "+=50px" }, "slow" )
+  //     // $('img').animate({ "left": "+=50px" }, "slow" )
+  //      $('img').hide('slide',{direction:'right'},1000);
   //     // $('.wl-like-buttons').animate({top:'-=150'}, 1000)
   //   }).fail(function(){
   //     console.log("no");
   //   })
 
-
-
-
-
-
   // });
+
+
+
+
 })
-
-
-
-
-
-
-    //   $('.product-card').animate({'opacity':0});
-    //   }
-    // })
-    // $('.product-card').animate({'opacity':0});
-    // $('.product-card').animate({'left':'+=150'},{queue:false})

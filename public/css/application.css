@@ -166,6 +166,7 @@ a:hover {
   padding-top: 10px;
   width: 422px;
   height: 481px;
+  border-radius: 8px;
   /*background-color: red;*/
 }
 
@@ -245,11 +246,12 @@ a:hover {
 .product-box{
   /*display: inline-block;*/
   width: 231px;
-  height: 374px;
+  height: 384px;
   /*margin: 10px;*/
   border: 1px solid;
   margin-left: 15px;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .wl-image {
@@ -267,12 +269,17 @@ a:hover {
   height: 40px;
 }
 
+.wl-arrow {
+  padding: 0 0 0 0;
+  margin: 0 0 -5px 0;
+}
+
 .wl-product-info-designer {
   max-width: 100%;
 }
 
 .wl-product-info-heart {
-  margin: 3px 5px 0 0;
+  margin: 5px 5px 0px 0;
   float: right;
 }
 
